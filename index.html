@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>THE SYSTEM | Become the Strongest Hunter</title>
+    <meta name="description"
+        content="Turn your life into a game. Train, complete quests, and exceed your limits with the ultimate fitness RPG inspired by Solo Leveling.">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Rajdhani:wght@500;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="styles.css">
+
+    <!-- Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <!-- Animations -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+</head>
+
+<body class="dark-theme">
+    <!-- System Entry Notification -->
+    <div id="system-entry" class="system-entry-overlay">
+        <div class="system-message-card">
+            <div class="system-message-header">[SYSTEM] NOTICE</div>
+            <div class="system-message-content">
+                <span class="glitch-text" data-text="Welcome Player.">Welcome Player.</span><br>
+                <span>You have unread messages.</span>
+            </div>
+            <div class="system-message-footer">PREPARE TO LEVEL UP</div>
+        </div>
+    </div>
+
+    <!-- Custom Cursor -->
+    <div class="custom-cursor"></div>
+
+    <div id="particles-js"></div>
+
+    <header class="header">
+        <nav class="container nav">
+            <a href="#" class="logo">
+                <span class="system-bracket">[</span>
+                <span class="logo-text">SYSTEM</span>
+                <span class="system-bracket">]</span>
+            </a>
+            <ul class="nav-links">
+                <li><a href="#about">About</a></li>
+                <li><a href="#features">Features</a></li>
+                <li><a href="#ranks">Ranks</a></li>
+                <li><a href="#download" class="btn btn-primary-outline">Arise</a></li>
+            </ul>
+            <button class="mobile-toggle" aria-label="Toggle Menu">
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+            </button>
+        </nav>
+    </header>
+
+    <!-- Mobile Nav Overlay -->
+    <div class="mobile-nav-overlay">
+        <ul class="mobile-nav-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#features">Features</a></li>
+            <li><a href="#ranks">Ranks</a></li>
+            <li><a href="#download" class="btn btn-primary">Arise</a></li>
+        </ul>
+    </div>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero" id="home">
+            <div class="container hero-content" data-aos="fade-up">
+                <div class="system-alert">
+                    <span class="alert-icon">!</span>
+                    <span class="alert-text">DAILY QUEST HAS ARRIVED</span>
+                </div>
+                <h1 class="hero-title">THE SYSTEM - BECOME THE<br><span class="text-glow">STRONGEST HUNTER</span></h1>
+                <p class="hero-subtitle">Your life has become a game. Train, complete quests, and exceed your limits.
+                    Are you ready for Reawakening?</p>
+                <div class="hero-actions">
+                    <a href="#download" class="btn btn-primary">Download Now</a>
+                    <a href="#about" class="btn btn-secondary">Learn More</a>
+                </div>
+            </div>
+            <div class="hero-scroll-indicator">
+                <span>SCROLL TO PROGRESS</span>
+                <div class="scroll-arrow"></div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section class="about section-padding" id="about">
+            <div class="container grid-2">
+                <div class="about-image-container" data-aos="fade-right">
+                    <div class="glass-card mockup-card">
+                        <div class="mockup-header">
+                            <span class="hunter-name">S-RANK HUNTER</span>
+                            <span class="level-indicator">LVL. 99</span>
+                        </div>
+                        <div class="stats-visual">
+                            <div class="stat-row">
+                                <div class="stat-header">
+                                    <span class="stat-label">STR</span>
+                                    <span class="stat-value" data-target="999">10</span>
+                                </div>
+                                <div class="stat-bar">
+                                    <div class="stat-fill" style="width: 85%"></div>
+                                </div>
+                            </div>
+                            <div class="stat-row">
+                                <div class="stat-header">
+                                    <span class="stat-label">AGI</span>
+                                    <span class="stat-value" data-target="999">10</span>
+                                </div>
+                                <div class="stat-bar">
+                                    <div class="stat-fill" style="width: 70%"></div>
+                                </div>
+                            </div>
+                            <div class="stat-row">
+                                <div class="stat-header">
+                                    <span class="stat-label">INT</span>
+                                    <span class="stat-value" data-target="999">10</span>
+                                </div>
+                                <div class="stat-bar">
+                                    <div class="stat-fill" style="width: 92%"></div>
+                                </div>
+                            </div>
+                            <div class="level-up-badge">LEVEL UP!</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-text" data-aos="fade-left">
+                    <h2 class="section-title">What is<br><span class="text-blue">"The System"?</span></h2>
+                    <p class="section-description">The System is the ultimate fitness RPG that turns your daily goals
+                        into missions. Inspired by the world of "Solo Leveling", the app allows you to track your
+                        physical progress through an interactive system of levels, stats, and battles.</p>
+                    <ul class="about-list">
+                        <li><i data-lucide="check-circle"></i> Hunter ID Card & Rank System</li>
+                        <li><i data-lucide="zap"></i> Daily Quests & Penalty Zone</li>
+                        <li><i data-lucide="shield"></i> Shadow Army (Arise)</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Features Section -->
+        <section class="features section-padding" id="features">
+            <div class="container">
+                <div class="section-header text-center" data-aos="fade-up">
+                    <h2 class="section-title">Key Functionalities</h2>
+                    <p class="section-subtitle">Daily quests are no longer an option – they are the path to the top.</p>
+                </div>
+                <div class="features-grid">
+                    <div class="glass-card feature-card" data-aos="fade-up" data-aos-delay="100">
+                        <i data-lucide="credit-card" class="feature-icon"></i>
+                        <h3>Hunter ID Card</h3>
+                        <p>Personalized card and rank system from E-Rank to National Level Hunter.</p>
+                    </div>
+                    <div class="glass-card feature-card" data-aos="fade-up" data-aos-delay="200">
+                        <i data-lucide="scroll" class="feature-icon"></i>
+                        <h3>Daily Quests</h3>
+                        <p>Complete tasks for rewards or face the Penalty Zone punishment quests.</p>
+                    </div>
+                    <div class="glass-card feature-card" data-aos="fade-up" data-aos-delay="300">
+                        <i data-lucide="swords" class="feature-icon"></i>
+                        <h3>Story & Boss Battles</h3>
+                        <p>Fight against bosses like Igris and Vulcan for legendary items.</p>
+                    </div>
+                    <div class="glass-card feature-card" data-aos="fade-up" data-aos-delay="400">
+                        <i data-lucide="github" class="feature-icon"></i>
+                        <h3>Shadow Army</h3>
+                        <p>Use "Shadow Extraction" and build your shadow army just like Sung Jin-Woo.</p>
+                    </div>
+                    <div class="glass-card feature-card" data-aos="fade-up" data-aos-delay="500">
+                        <i data-lucide="shopping-bag" class="feature-icon"></i>
+                        <h3>Inventory & Shop</h3>
+                        <p>Collect weapons like Baruka's Dagger and spend gold on equipment.</p>
+                    </div>
+                    <div class="glass-card feature-card" data-aos="fade-up" data-aos-delay="600">
+                        <i data-lucide="activity" class="feature-icon"></i>
+                        <h3>Advanced Analytics</h3>
+                        <p>Track hydration, sleep, and training with interactive Body Heatmaps.</p>
+                    </div>
+                    <div class="glass-card feature-card" data-aos="fade-up" data-aos-delay="700">
+                        <i data-lucide="mountain" class="feature-icon"></i>
+                        <h3>Dungeons & Raids</h3>
+                        <p>Enter instances of varying difficulties to test your strength and gain resources.</p>
+                    </div>
+                    <div class="glass-card feature-card" data-aos="fade-up" data-aos-delay="800">
+                        <i data-lucide="monitor" class="feature-icon"></i>
+                        <h3>Cinematic UI</h3>
+                        <p>Premium design identical to the "System" interface from the anime.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Ranks Section -->
+        <section class="ranks section-padding" id="ranks">
+            <div class="container">
+                <div class="section-header text-center" data-aos="fade-up">
+                    <h2 class="section-title">Hunter Ranks</h2>
+                </div>
+                <div class="ranks-scroller">
+                    <div class="rank-item" data-rank="E">E</div>
+                    <div class="rank-item" data-rank="D">D</div>
+                    <div class="rank-item" data-rank="C">C</div>
+                    <div class="rank-item" data-rank="B">B</div>
+                    <div class="rank-item" data-rank="A">A</div>
+                    <div class="rank-item rank-s" data-rank="S">S</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Download Section -->
+        <section class="download section-padding" id="download">
+            <div class="container text-center" data-aos="zoom-in">
+                <h2 class="section-title">Ready to<br><span class="text-glow">Arise?</span></h2>
+                <p class="cta-text">Join the army of 1,000,000+ Hunters and become the strongest.</p>
+                <div class="download-btns">
+                    <a href="#" class="btn-store"><img
+                            src="https://tools.applemediaservices.com/api/badges/download-on-the-app-store/black/en-us?size=250x83"
+                            alt="App Store"></a>
+                    <a href="#" class="btn-store"><img
+                            src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png"
+                            alt="Google Play" style="height: 64px;"></a>
+                </div>
+                <div class="badge">EARLY ACCESS AVAILABLE</div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container grid-3">
+            <div class="footer-brand">
+                <a href="#" class="logo">
+                    <span class="system-bracket">[</span>
+                    <span class="logo-text">SYSTEM</span>
+                    <span class="system-bracket">]</span>
+                </a>
+                <p>Arise. Level up. In real life.</p>
+            </div>
+            <div class="footer-links">
+                <h4>Support</h4>
+                <ul>
+                    <li><a href="#">Help Center</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Terms of Service</a></li>
+                </ul>
+            </div>
+            <div class="footer-social">
+                <h4>Connect</h4>
+                <div class="social-icons">
+                    <i data-lucide="twitter"></i>
+                    <i data-lucide="instagram"></i>
+                    <i data-lucide="github"></i>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom text-center">
+            <p>&copy; 2024 SYSTEM ID. Built for Solo Leveling fans.</p>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button id="back-to-top" class="back-to-top" aria-label="Back to Top">
+        <i data-lucide="arrow-up"></i>
+    </button>
+
+    <!-- Daily Quest Widget -->
+    <div class="quest-widget" id="quest-widget">
+        <div class="quest-header">DAILY QUEST</div>
+        <div class="quest-title">Prepare to Level Up</div>
+        <ul class="quest-list">
+            <li id="quest-item-1"><span class="checkbox"></span> Explore the page</li>
+            <li id="quest-item-2"><span class="checkbox"></span> Check features</li>
+            <li id="quest-item-3"><span class="checkbox"></span> Check download</li>
+        </ul>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="script.js"></script>
+    <script>
+        AOS.init({
+            duration: 800,
+            easing: 'ease-in-out',
+            once: true,
+            mirror: false
+        });
+        lucide.createIcons();
+    </script>
+</body>
+
+</html>
