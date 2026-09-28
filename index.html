@@ -1,0 +1,1203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SYSTEM: Awakening | Solo Leveling Gamified Fitness Tracker</title>
+  <meta name="description" content="SYSTEM: Awakening - Transform your real-world workouts into an epic RPG adventure. AI camera rep tracking, real-world GPS Dungeons, Shadow Army extraction, and rise from E-Rank to the Shadow Monarch.">
+
+  <!-- Google Fonts: Orbitron, Rajdhani, JetBrains Mono, Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Orbitron:wght@500;600;700;800;900&family=Rajdhani:wght@500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <!-- Master Stylesheet -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Ambient CRT Scanline Overlay -->
+  <div class="scanline-overlay" aria-hidden="true"></div>
+  <div class="cyber-grid-bg" aria-hidden="true"></div>
+
+  <!-- Custom Cursor -->
+  <div class="system-cursor-dot" id="cursorDot" aria-hidden="true"></div>
+  <div class="system-cursor-ring" id="cursorRing" aria-hidden="true"></div>
+
+  <!-- =========================================================================
+       1. FLOATING HOLOGRAPHIC SYSTEM NOTIFICATION MODAL (QUEST HAS ARRIVED)
+       ========================================================================= -->
+  <div class="system-modal-backdrop" id="systemQuestModal" role="dialog" aria-modal="true" aria-labelledby="questModalTitle">
+    <div class="system-quest-modal">
+      <div class="tech-bracket-tl"></div>
+      <div class="tech-bracket-tr"></div>
+      <div class="tech-bracket-bl"></div>
+      <div class="tech-bracket-br"></div>
+
+      <div class="modal-sys-tag">
+        <span class="status-dot"></span>
+        <span>[SYSTEM ALERT // QUEST NOTIFICATION]</span>
+      </div>
+
+      <h2 class="modal-quest-title" id="questModalTitle">
+        [QUEST HAS ARRIVED: PREPARE TO BECOME STRONGER]
+      </h2>
+
+      <p class="modal-quest-desc">
+        A secret quest from the System has been delivered directly to your consciousness. 
+        Your physical limits are about to be shattered. Will you accept your Reawakening?
+      </p>
+
+      <div class="modal-quest-warning">
+        <i data-lucide="alert-triangle" style="display:inline; width:14px; height:14px; vertical-align:middle; margin-right:4px;"></i>
+        WARNING: Refusal or quest failure will trigger transportation to the Penalty Zone.
+      </div>
+
+      <div class="modal-actions">
+        <button type="button" class="btn btn-primary" id="btnAcceptQuest">
+          <i data-lucide="check-circle-2"></i> [ACCEPT QUEST]
+        </button>
+        <button type="button" class="btn btn-secondary" id="btnRejectQuest">
+          [REJECT]
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- =========================================================================
+       HEADER / NAVIGATION
+       ========================================================================= -->
+  <header class="system-header" id="systemHeader">
+    <div class="container nav-container">
+      <a href="index.html#hero" class="system-logo" aria-label="System: Awakening Home">
+        <span class="logo-bracket">[</span>
+        <span class="logo-main">SYSTEM:</span>
+        <span class="logo-accent">AWAKENING</span>
+        <span class="logo-bracket">]</span>
+      </a>
+
+      <nav aria-label="Main Navigation">
+        <ul class="nav-menu">
+          <li><a href="#hero" class="nav-link">Awakening</a></li>
+          <li><a href="#status-window" class="nav-link">Status HUD</a></li>
+          <li><a href="#rank-calculator" class="nav-link">Hunter Rank</a></li>
+          <li><a href="#features" class="nav-link">Bento Features</a></li>
+          <li><a href="#logs" class="nav-link">Player Logs</a></li>
+          <li><a href="#faq" class="nav-link">FAQ</a></li>
+        </ul>
+      </nav>
+
+      <div class="nav-actions">
+        <button type="button" class="sfx-toggle-btn" id="sfxToggleBtn" aria-label="Toggle Sound Effects">
+          <i data-lucide="volume-2" id="sfxIcon"></i>
+          <span id="sfxLabel">SFX: ON</span>
+        </button>
+
+        <a href="#download" class="nav-arise-btn" id="navAriseBtn">
+          <i data-lucide="zap"></i>
+          <span>Arise</span>
+        </a>
+
+        <button type="button" class="mobile-toggle-btn" id="mobileToggleBtn" aria-label="Open Navigation Menu" aria-expanded="false">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer -->
+  <div class="mobile-nav-drawer" id="mobileNavDrawer" aria-hidden="true">
+    <a href="#hero" class="nav-link mobile-link">Awakening</a>
+    <a href="#status-window" class="nav-link mobile-link">Status HUD</a>
+    <a href="#rank-calculator" class="nav-link mobile-link">Hunter Rank</a>
+    <a href="#features" class="nav-link mobile-link">Bento Features</a>
+    <a href="#logs" class="nav-link mobile-link">Player Logs</a>
+    <a href="#faq" class="nav-link mobile-link">FAQ</a>
+    <a href="#download" class="btn btn-primary btn-lg mobile-link" style="margin-top: 1rem;">
+      <i data-lucide="zap"></i> Download App
+    </a>
+  </div>
+
+  <main>
+    <!-- =======================================================================
+         2. HERO SECTION
+         ======================================================================= -->
+    <section class="hero-section" id="hero">
+      <div class="container hero-grid">
+        <div class="hero-content-col">
+          <div class="hero-alert-banner">
+            <span class="hero-alert-icon">!</span>
+            <span>[SYSTEM ALERT // REAWAKENING EVENT DETECTED]</span>
+          </div>
+
+          <h1 class="hero-h1">
+            Wake Up, Hunter.<br>
+            <span class="glow-title">The System Has Chosen You.</span>
+          </h1>
+
+          <p class="hero-subhead">
+            Transform your real-world workouts into an epic RPG adventure. Track reps with 
+            real-time AI camera vision, conquer real-world GPS Dungeons, extract defeated 
+            monsters into your Shadow Army, and rise from E-Rank to the Shadow Monarch.
+          </p>
+
+          <div class="hero-ctas">
+            <!-- App Store Pill -->
+            <a href="#download" class="app-store-pill">
+              <svg class="app-store-icon" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M15.97 6.37c.64-.78 1.08-1.86.96-2.95-1 .04-2.16.67-2.84 1.46-.58.67-1.09 1.77-.96 2.83 1.12.09 2.22-.57 2.84-1.34z"/>
+              </svg>
+              <div class="app-store-text">
+                <span class="app-store-label">Download on the</span>
+                <span class="app-store-brand">App Store</span>
+              </div>
+            </a>
+
+            <!-- Google Play Pill -->
+            <a href="#download" class="app-store-pill">
+              <svg class="app-store-icon" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M3.6 2.3c-.3.3-.5.9-.5 1.5v16.4c0 .6.2 1.2.5 1.5l.1.1 9.2-9.2v-.2L3.7 2.2l-.1.1zM17.1 16.3l-3.3-3.3v-.2l3.3-3.3.1.1 3.9 2.2c1.1.6 1.1 1.6 0 2.2l-3.9 2.2-.1.1zM13.8 12.8L4.6 22c.4.4 1 .4 1.8 0l10.9-6.2-3.5-3zM13.8 11.2l3.5-3-10.9-6.2c-.8-.4-1.4-.4-1.8 0l9.2 9.2z"/>
+              </svg>
+              <div class="app-store-text">
+                <span class="app-store-label">GET IT ON</span>
+                <span class="app-store-brand">Google Play</span>
+              </div>
+            </a>
+
+            <a href="#status-window" class="btn btn-outline-cyan">
+              <i data-lucide="terminal"></i> Enter System Web App
+            </a>
+          </div>
+
+          <div class="hero-trust-bar">
+            <div class="trust-item">
+              <i data-lucide="shield-check"></i>
+              <span>100% On-Device AI Privacy</span>
+            </div>
+            <div class="trust-item">
+              <i data-lucide="map-pin"></i>
+              <span>GPS Dungeon Exploration</span>
+            </div>
+            <div class="trust-item">
+              <i data-lucide="flame"></i>
+              <span>Real Calisthenics & Running</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Floating Holographic Quest Notification Preview -->
+        <div class="hero-visual-col">
+          <div class="hero-hologram-card">
+            <div class="tech-bracket-tl"></div>
+            <div class="tech-bracket-tr"></div>
+            <div class="tech-bracket-bl"></div>
+            <div class="tech-bracket-br"></div>
+
+            <div class="holo-header">
+              <span class="holo-header-title">[DAILY QUEST // SYSTEM]</span>
+              <div class="holo-ping">
+                <span class="holo-ping-dot"></span>
+                <span>TIME TO RESET: 06:14:22</span>
+              </div>
+            </div>
+
+            <div class="holo-body">
+              <div class="holo-quest-box">
+                <h3 class="holo-quest-title">PREPARE TO BECOME STRONGER</h3>
+                <p class="holo-quest-req">GOAL: Physical conditioning for the Reawakened Hunter.</p>
+              </div>
+
+              <ul class="holo-objective-list">
+                <li class="holo-obj-item">
+                  <span>[ ] PUSH-UPS</span>
+                  <span class="holo-obj-val">100 REPS</span>
+                </li>
+                <li class="holo-obj-item">
+                  <span>[ ] SIT-UPS</span>
+                  <span class="holo-obj-val">100 REPS</span>
+                </li>
+                <li class="holo-obj-item">
+                  <span>[ ] SQUATS</span>
+                  <span class="holo-obj-val">100 REPS</span>
+                </li>
+                <li class="holo-obj-item">
+                  <span>[ ] DISTANCE RUNNING</span>
+                  <span class="holo-obj-val">10.0 KM</span>
+                </li>
+              </ul>
+
+              <div class="holo-warning-footer">
+                [SYSTEM WARNING: INCOMPLETE QUEST RESULTS IN 4H PENALTY ZONE TRANSIT]
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =======================================================================
+         3. THE "SYSTEM HUD" INTERACTIVE PREVIEW & RANK CALCULATOR
+         ======================================================================= -->
+    <section class="system-hud-section section-padding" id="status-window">
+      <div class="container">
+        <div class="section-header text-center">
+          <div class="section-tag">[SYSTEM INTERFACE PREVIEW]</div>
+          <h2 class="section-title">THE STATUS WINDOW & RANK EVALUATION</h2>
+          <p class="section-subtitle">
+            Witness the real-time telemetry screen every Hunter sees upon awakening. 
+            Allocate your stat points, inspect legendary artifacts, and calculate your Hunter Rank.
+          </p>
+        </div>
+
+        <div class="hud-layout-grid">
+          <!-- LEFT: PAPERDOLL STATUS WINDOW -->
+          <div class="paperdoll-window">
+            <div class="tech-bracket-tl"></div>
+            <div class="tech-bracket-tr"></div>
+            <div class="tech-bracket-bl"></div>
+            <div class="tech-bracket-br"></div>
+
+            <div class="hud-window-titlebar">
+              <div class="window-title">
+                <i data-lucide="layout-grid"></i>
+                <span>[ STATUS WINDOW ]</span>
+              </div>
+              <div class="window-rank-badge" id="hudRankBadge">S-RANK</div>
+            </div>
+
+            <!-- Identity Header -->
+            <div class="player-identity-strip">
+              <div class="player-avatar-box">
+                <!-- Glowing Hunter Eyes Silhouette SVG -->
+                <svg viewBox="0 0 100 100" fill="none" stroke="currentColor">
+                  <path d="M50 15 C30 15 20 30 20 50 C20 70 30 85 50 85 C70 85 80 70 80 50 C80 30 70 15 50 15 Z" fill="#050a14" stroke="#00f0ff" stroke-width="2"/>
+                  <!-- Glowing Cyan Eyes -->
+                  <ellipse cx="38" cy="48" rx="8" ry="3" fill="#00f0ff" filter="drop-shadow(0 0 4px #00f0ff)"/>
+                  <ellipse cx="62" cy="48" rx="8" ry="3" fill="#00f0ff" filter="drop-shadow(0 0 4px #00f0ff)"/>
+                  <path d="M30 44 Q38 41 46 45" stroke="#38bdf8" stroke-width="2"/>
+                  <path d="M70 44 Q62 41 54 45" stroke="#38bdf8" stroke-width="2"/>
+                </svg>
+              </div>
+
+              <div class="player-meta-info">
+                <div class="player-name-row">
+                  <span class="player-name" id="hudPlayerName">SUNG JIN-WOO</span>
+                  <span class="player-level-badge">LVL. 74</span>
+                </div>
+                <div class="player-subtitles">
+                  <span>JOB: <strong class="sub-highlight">SHADOW MONARCH</strong></span>
+                  <span>TITLE: <strong>ONE WHO OVERCAME ADVERSITY</strong></span>
+                  <span>FATIGUE: <strong style="color:#10b981;">0% [OPTIMAL]</strong></span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Health & Mana Bars -->
+            <div class="resource-bars-group">
+              <div class="gauge-row">
+                <div class="gauge-labels">
+                  <span style="color:#10b981;">HP [HEALTH POINTS]</span>
+                  <span id="hpValue">14,200 / 14,200</span>
+                </div>
+                <div class="gauge-track">
+                  <div class="gauge-fill hp-bar" style="width: 100%;"></div>
+                </div>
+              </div>
+
+              <div class="gauge-row">
+                <div class="gauge-labels">
+                  <span style="color:#8b5cf6;">MP [MANA POINTS]</span>
+                  <span id="mpValue">8,950 / 8,950</span>
+                </div>
+                <div class="gauge-track">
+                  <div class="gauge-fill mp-bar" style="width: 95%;"></div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Core Stats Allocation -->
+            <div class="stats-breakdown-box">
+              <div class="stats-header-bar">
+                <span class="stats-title">[CORE ATTRIBUTES]</span>
+                <span class="stat-points-remaining" id="statPointsRemaining">
+                  AVAILABLE POINTS: <strong id="ptsCount">3</strong>
+                </span>
+              </div>
+
+              <!-- STR -->
+              <div class="stat-item-row">
+                <span class="stat-key">STR</span>
+                <div class="stat-bar-track">
+                  <div class="stat-bar-fill" id="barSTR" style="width: 88%;"></div>
+                </div>
+                <span class="stat-num-val" id="valSTR">182</span>
+                <button type="button" class="stat-btn-plus" data-stat="STR" aria-label="Increase Strength">+</button>
+              </div>
+
+              <!-- VIT -->
+              <div class="stat-item-row">
+                <span class="stat-key">VIT</span>
+                <div class="stat-bar-track">
+                  <div class="stat-bar-fill" id="barVIT" style="width: 72%;"></div>
+                </div>
+                <span class="stat-num-val" id="valVIT">145</span>
+                <button type="button" class="stat-btn-plus" data-stat="VIT" aria-label="Increase Vitality">+</button>
+              </div>
+
+              <!-- AGI -->
+              <div class="stat-item-row">
+                <span class="stat-key">AGI</span>
+                <div class="stat-bar-track">
+                  <div class="stat-bar-fill" id="barAGI" style="width: 94%;"></div>
+                </div>
+                <span class="stat-num-val" id="valAGI">190</span>
+                <button type="button" class="stat-btn-plus" data-stat="AGI" aria-label="Increase Agility">+</button>
+              </div>
+
+              <!-- INT -->
+              <div class="stat-item-row">
+                <span class="stat-key">INT</span>
+                <div class="stat-bar-track">
+                  <div class="stat-bar-fill" id="barINT" style="width: 80%;"></div>
+                </div>
+                <span class="stat-num-val" id="valINT">160</span>
+                <button type="button" class="stat-btn-plus" data-stat="INT" aria-label="Increase Intelligence">+</button>
+              </div>
+
+              <!-- SENSE -->
+              <div class="stat-item-row">
+                <span class="stat-key">SENSE</span>
+                <div class="stat-bar-track">
+                  <div class="stat-bar-fill" id="barSENSE" style="width: 66%;"></div>
+                </div>
+                <span class="stat-num-val" id="valSENSE">135</span>
+                <button type="button" class="stat-btn-plus" data-stat="SENSE" aria-label="Increase Perception/Sense">+</button>
+              </div>
+            </div>
+
+            <!-- Equipment Slots (Iconic Gear) -->
+            <div class="equipment-section">
+              <div class="equip-title">[EQUIPPED GEAR SLOTS // CLICK TO INSPECT]</div>
+              <div class="equip-grid">
+                <!-- Slot 1 -->
+                <div class="equip-slot" data-gear="kasaka" tabindex="0" role="button" aria-label="Inspect Kasaka's Dagger">
+                  <div class="equip-icon-wrap">
+                    <i data-lucide="sword"></i>
+                  </div>
+                  <span class="equip-name">Kasaka's Fang</span>
+                  <span class="equip-type">Dagger (A)</span>
+                </div>
+
+                <!-- Slot 2 -->
+                <div class="equip-slot" data-gear="demon-sword" tabindex="0" role="button" aria-label="Inspect Demon King's Longsword">
+                  <div class="equip-icon-wrap">
+                    <i data-lucide="zap"></i>
+                  </div>
+                  <span class="equip-name">Demon Longsword</span>
+                  <span class="equip-type">Weapon (S)</span>
+                </div>
+
+                <!-- Slot 3 -->
+                <div class="equip-slot" data-gear="knight-plate" tabindex="0" role="button" aria-label="Inspect High Knight Plate">
+                  <div class="equip-icon-wrap">
+                    <i data-lucide="shield"></i>
+                  </div>
+                  <span class="equip-name">Knight Armor</span>
+                  <span class="equip-type">Plate (S)</span>
+                </div>
+
+                <!-- Slot 4 -->
+                <div class="equip-slot" data-gear="orb-avarice" tabindex="0" role="button" aria-label="Inspect Orb of Avarice">
+                  <div class="equip-icon-wrap">
+                    <i data-lucide="disc"></i>
+                  </div>
+                  <span class="equip-name">Orb of Avarice</span>
+                  <span class="equip-type">Relic (S)</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Tooltip Toast for Gear -->
+            <div class="gear-tooltip-toast" id="gearTooltip" role="status">
+              <strong id="tooltipTitle" style="color:#00f0ff;">[GEAR LORE]</strong>: 
+              <span id="tooltipDesc">Click an item slot above to inspect stat buffs and lore.</span>
+            </div>
+          </div>
+
+          <!-- RIGHT: RANK CALCULATOR & ANIMATED HUNTER ID CARD -->
+          <div class="calculator-column" id="rank-calculator">
+            <div class="calculator-card">
+              <h3 class="calc-title">HUNTER RANK EVALUATION</h3>
+              <p class="calc-desc">
+                Enter your physical performance benchmarks. The Association algorithm evaluates your 
+                mana threshold and assigns your official Hunter Rank.
+              </p>
+
+              <!-- Presets -->
+              <div class="presets-strip">
+                <button type="button" class="preset-chip" data-preset="e">E-Rank Rookie</button>
+                <button type="button" class="preset-chip" data-preset="c">C-Rank Dungeon Vanguard</button>
+                <button type="button" class="preset-chip" data-preset="a">A-Rank Strike Elite</button>
+                <button type="button" class="preset-chip" data-preset="s">S-Rank Monarch</button>
+              </div>
+
+              <div class="calc-form-group">
+                <label class="calc-label" for="calcNameInput">
+                  <span>HUNTER CODENAME</span>
+                  <span class="text-glow-cyan">ID REGISTRATION</span>
+                </label>
+                <input type="text" id="calcNameInput" class="calc-input" value="SUNG JIN-WOO" maxlength="24">
+              </div>
+
+              <div class="calc-form-group">
+                <label class="calc-label" for="calcPushupsInput">
+                  <span>MAX PUSH-UPS (REPS IN ONE SET)</span>
+                  <span id="labelPushupsVal" class="text-glow-cyan">100 reps</span>
+                </label>
+                <input type="number" id="calcPushupsInput" class="calc-input" value="100" min="0" max="300">
+              </div>
+
+              <div class="calc-form-group">
+                <label class="calc-label" for="calcRunInput">
+                  <span>5K RUN TIME (MINUTES)</span>
+                  <span id="labelRunVal" class="text-glow-cyan">17.5 mins</span>
+                </label>
+                <input type="number" id="calcRunInput" class="calc-input" value="17.5" step="0.5" min="10" max="60">
+              </div>
+
+              <button type="button" class="btn btn-primary" id="btnCalculateRank" style="width: 100%;">
+                <i data-lucide="refresh-cw"></i> Recalculate Hunter Rank
+              </button>
+            </div>
+
+            <!-- OFFICIAL ANIMATED HUNTER ID CARD -->
+            <div class="hunter-id-card" id="hunterIdCard">
+              <div class="tech-bracket-tl"></div>
+              <div class="tech-bracket-tr"></div>
+              <div class="tech-bracket-bl"></div>
+              <div class="tech-bracket-br"></div>
+
+              <div class="card-topbar">
+                <span class="association-title">KOREAN HUNTERS ASSOCIATION</span>
+                <span class="card-serial" id="cardSerialNo">ID: #KR-89104-HUNTER</span>
+              </div>
+
+              <div class="card-profile-body">
+                <div class="card-avatar-graphic">
+                  <i data-lucide="user-check"></i>
+                </div>
+
+                <div class="card-info-rows">
+                  <div class="card-hunter-name" id="cardHunterName">SUNG JIN-WOO</div>
+                  <div class="card-field-row">CLASS: <span id="cardHunterClass">SHADOW MONARCH</span></div>
+                  <div class="card-field-row">COMBAT POWER: <span id="cardCombatPower">98,450 CP</span></div>
+                  <div class="card-field-row">LICENSE STATUS: <span style="color:#10b981;">OFFICIALLY VERIFIED</span></div>
+                </div>
+
+                <div class="card-rank-emblem rank-s" id="cardRankEmblem">S</div>
+              </div>
+
+              <div class="card-footer-strip">
+                <span class="card-barcode">||| | ||||| || |||| ||| ||||</span>
+                <span>AUTHENTICATED BY THE SYSTEM</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =======================================================================
+         4. CORE FEATURE HIGHLIGHTS (BENTO GRID LAYOUT)
+         ======================================================================= -->
+    <section class="features-section section-padding" id="features">
+      <div class="container">
+        <div class="section-header text-center">
+          <div class="section-tag">[SYSTEM ARCHITECTURE & CAPABILITIES]</div>
+          <h2 class="section-title">THE HUNTER'S TOOLKIT: BENTO GRID</h2>
+          <p class="section-subtitle">
+            Engineered with military-grade on-device AI, satellite GPS gate generation, 
+            and faithful Solo Leveling mechanics.
+          </p>
+        </div>
+
+        <div class="bento-grid">
+          <!-- BENTO 1: REAL-TIME AI CAMERA VISION (Col 8) -->
+          <div class="bento-cell bento-col-8">
+            <div class="bento-badge">
+              <i data-lucide="camera"></i>
+              <span>FEATURE A // TENSORFLOW.JS ON-DEVICE VISION</span>
+            </div>
+            <h3 class="bento-title">Real-Time AI Camera Rep Tracking & Shadow Scanner</h3>
+            <p class="bento-desc">
+              State-of-the-art computer vision analyzes skeletal keypoints at 60 FPS directly in your browser. 
+              <strong>"Shadow Scanner Mode"</strong> renders a 100% private holographic neon wireframe on deep black — 
+              zero video frames are ever recorded or transmitted. Every clean repetition deals direct critical strike 
+              damage to dungeon bosses!
+            </p>
+
+            <!-- Interactive AI Camera Rep Simulator -->
+            <div class="ai-camera-demo-box">
+              <div class="skeleton-viewport">
+                <div class="camera-scanner-beam"></div>
+                <!-- Holographic Neon Skeleton Wireframe -->
+                <svg class="skeleton-overlay-svg" viewBox="0 0 100 120" fill="none" stroke="#00f0ff" stroke-width="2" id="skeletonSvg">
+                  <!-- Head -->
+                  <circle cx="50" cy="18" r="9" stroke="#00f0ff" stroke-width="2.5" fill="rgba(0, 240, 255, 0.15)"/>
+                  <!-- Spine -->
+                  <line x1="50" y1="27" x2="50" y2="65" stroke="#00f0ff" stroke-width="2.5"/>
+                  <!-- Shoulders -->
+                  <line x1="30" y1="36" x2="70" y2="36" stroke="#00f0ff" stroke-width="2.5"/>
+                  <!-- Arms -->
+                  <line x1="30" y1="36" x2="22" y2="52" id="armL1" stroke="#38bdf8" stroke-width="2"/>
+                  <line x1="22" y1="52" x2="16" y2="68" id="armL2" stroke="#38bdf8" stroke-width="2"/>
+                  <line x1="70" y1="36" x2="78" y2="52" id="armR1" stroke="#38bdf8" stroke-width="2"/>
+                  <line x1="78" y1="52" x2="84" y2="68" id="armR2" stroke="#38bdf8" stroke-width="2"/>
+                  <!-- Pelvis -->
+                  <line x1="38" y1="65" x2="62" y2="65" stroke="#00f0ff" stroke-width="2.5"/>
+                  <!-- Legs -->
+                  <line x1="38" y1="65" x2="34" y2="90" id="legL1" stroke="#38bdf8" stroke-width="2"/>
+                  <line x1="34" y1="90" x2="32" y2="114" id="legL2" stroke="#38bdf8" stroke-width="2"/>
+                  <line x1="62" y1="65" x2="66" y2="90" id="legR1" stroke="#38bdf8" stroke-width="2"/>
+                  <line x1="66" y1="90" x2="68" y2="114" id="legR2" stroke="#38bdf8" stroke-width="2"/>
+                  <!-- Joint Nodes -->
+                  <circle cx="50" cy="36" r="3" fill="#ffffff"/>
+                  <circle cx="30" cy="36" r="3" fill="#00f0ff"/>
+                  <circle cx="70" cy="36" r="3" fill="#00f0ff"/>
+                  <circle cx="22" cy="52" r="3" fill="#00f0ff"/>
+                  <circle cx="78" cy="52" r="3" fill="#00f0ff"/>
+                </svg>
+              </div>
+
+              <div class="combat-damage-stage">
+                <div class="monster-target-bar">
+                  <div class="monster-header-row">
+                    <span>BOSS: CERBERUS (GATEKEEPER)</span>
+                    <span id="monsterHpLabel">650 / 1,000 HP</span>
+                  </div>
+                  <div class="monster-hp-track">
+                    <div class="monster-hp-fill" id="monsterHpFill"></div>
+                  </div>
+                </div>
+
+                <div class="rep-trigger-action">
+                  <button type="button" class="btn btn-sm btn-primary" id="btnTestRep">
+                    <i data-lucide="play"></i> Perform Rep (Push-up)
+                  </button>
+                  <span class="damage-pop-text" id="damagePopText">-340 CRIT!</span>
+                </div>
+                <span style="font-family:var(--font-mono); font-size:0.75rem; color:var(--text-dim);">
+                  TOTAL REPS TRACKED: <strong id="repCounter" style="color:#00f0ff;">18</strong> | ACCURACY: 99.4%
+                </span>
+              </div>
+            </div>
+          </div>
+
+          <!-- BENTO 2: GPS GATES & FOG OF WAR (Col 4) -->
+          <div class="bento-cell bento-col-4">
+            <div class="bento-badge">
+              <i data-lucide="map"></i>
+              <span>FEATURE B // GPS GATES</span>
+            </div>
+            <h3 class="bento-title">Real-World GPS Gates & Fog of War</h3>
+            <p class="bento-desc">
+              Your real city is mapped with magical dungeon portals. Walking clears Fog of War on the radar. 
+              Approach the coordinates physically to initiate raid instances!
+            </p>
+
+            <div class="radar-map-widget">
+              <div class="radar-scope-circle">
+                <div class="radar-sweep-hand"></div>
+                <!-- Interactive Gates on Radar -->
+                <div class="radar-gate-marker marker-e" data-gate="E-Rank Mine (200m away)" title="E-Rank Gate"></div>
+                <div class="radar-gate-marker marker-b" data-gate="B-Rank Beast Lair (1.2km away)" title="B-Rank Gate"></div>
+                <div class="radar-gate-marker marker-red" data-gate="CRITICAL: RED GATE - ICE ELVES (350m away)" title="Red Gate!"></div>
+              </div>
+              <div class="radar-status-caption" id="radarGateInfo">
+                RADAR: 3 GATES DETECTED IN YOUR SECTOR
+              </div>
+            </div>
+          </div>
+
+          <!-- BENTO 3: "ARISE" & THE SHADOW ARMY (Col 12) -->
+          <div class="bento-cell bento-col-12">
+            <div class="bento-badge">
+              <i data-lucide="crown"></i>
+              <span>FEATURE C // SHADOW EXTRACTION SYSTEM</span>
+            </div>
+
+            <div class="shadow-army-showcase">
+              <div class="arise-command-bar">
+                <div class="arise-caption-group">
+                  <h3 class="arise-title">"ARISE" & The Shadow Army Extraction</h3>
+                  <p style="font-size:0.9rem; color:var(--text-muted); margin-top:0.25rem;">
+                    Defeat story dungeon bosses, unlock extraction rites, and command your army with voice activation. 
+                    Deploy shadows for passive AFK Mana Crystal & Gold mining while you rest.
+                  </p>
+                </div>
+                <button type="button" class="btn btn-purple" id="btnAriseCmd">
+                  <i data-lucide="sparkles"></i> VOICE COMMAND: "ARISE!"
+                </button>
+              </div>
+
+              <div class="shadow-soldier-tabs">
+                <!-- Igris -->
+                <div class="soldier-card active" data-soldier="igris">
+                  <div class="soldier-avatar-silhouette">
+                    <i data-lucide="shield"></i>
+                  </div>
+                  <span class="soldier-name">IGRIS</span>
+                  <span class="soldier-role">Bloodred Commander</span>
+                </div>
+
+                <!-- Beru -->
+                <div class="soldier-card" data-soldier="beru">
+                  <div class="soldier-avatar-silhouette">
+                    <i data-lucide="flame"></i>
+                  </div>
+                  <span class="soldier-name">BERU</span>
+                  <span class="soldier-role">The Ant King</span>
+                </div>
+
+                <!-- Tank -->
+                <div class="soldier-card" data-soldier="tank">
+                  <div class="soldier-avatar-silhouette">
+                    <i data-lucide="crosshair"></i>
+                  </div>
+                  <span class="soldier-name">TANK</span>
+                  <span class="soldier-role">Ice Bear Alpha</span>
+                </div>
+
+                <!-- Iron -->
+                <div class="soldier-card" data-soldier="iron">
+                  <div class="soldier-avatar-silhouette">
+                    <i data-lucide="hammer"></i>
+                  </div>
+                  <span class="soldier-name">IRON</span>
+                  <span class="soldier-role">Heavy Knight Taunt</span>
+                </div>
+
+                <!-- Tusk -->
+                <div class="soldier-card" data-soldier="tusk">
+                  <div class="soldier-avatar-silhouette">
+                    <i data-lucide="wand-2"></i>
+                  </div>
+                  <span class="soldier-name">TUSK</span>
+                  <span class="soldier-role">High Orc Shaman</span>
+                </div>
+              </div>
+
+              <!-- Soldier Description Dynamic Box -->
+              <div id="soldierDetailBox" style="background:rgba(139,92,246,0.06); border:1px solid var(--border-purple); padding:1rem 1.25rem; border-radius:var(--radius-md); font-family:var(--font-mono); font-size:0.85rem; color:var(--text-main);">
+                <strong>[SHADOW COMMANDER IGRIS]</strong>: Elite swordsman extracted from Job Change Quest. Passive Perk: Grants +15% Agility to daily sprint quests and auto-mines 1,200 Gold/hour.
+              </div>
+            </div>
+          </div>
+
+          <!-- BENTO 4: DAILY QUEST & PENALTY ZONE (Col 4) -->
+          <div class="bento-cell bento-col-4">
+            <div class="bento-badge">
+              <i data-lucide="skull"></i>
+              <span>FEATURE D // SURVIVAL MOTIVATION</span>
+            </div>
+            <h3 class="bento-title">Daily Quest & The Penalty Zone</h3>
+            <p class="bento-desc">
+              Complete your daily quota (100 push-ups, squats, sit-ups, 10km) before midnight. 
+              Fail? The System teleports you to the desert for 4 hours of relentless giant centipede evasion.
+            </p>
+
+            <div class="penalty-zone-preview">
+              <div class="penalty-countdown-display">
+                <span class="countdown-digits" id="penaltyTimer">04:18:39</span>
+                <span class="penalty-survival-time">UNTIL MIDNIGHT</span>
+              </div>
+
+              <button type="button" class="btn btn-sm btn-crimson" id="btnTestPenalty">
+                <i data-lucide="alert-octagon"></i> Simulate Penalty Zone Alert
+              </button>
+            </div>
+          </div>
+
+          <!-- BENTO 5: 15 STORY CHAPTERS FROM MANHWA (Col 4) -->
+          <div class="bento-cell bento-col-4">
+            <div class="bento-badge">
+              <i data-lucide="book-open"></i>
+              <span>FEATURE E // MANHWA CAMPAIGN</span>
+            </div>
+            <h3 class="bento-title">15 Official Story Raid Chapters</h3>
+            <p class="bento-desc">
+              Experience the canonical arc of Sung Jin-Woo. Progress through Double Dungeon, 
+              Hapjung Station, Cerberus, Red Gate, Demon Castle, and Jeju Island.
+            </p>
+
+            <div class="chapters-timeline-strip">
+              <div class="chapter-tile">
+                <span class="chapter-num">CHAPTER 01</span>
+                <span class="chapter-name">Double Dungeon</span>
+                <span class="chapter-boss">Statue of God (God's Commandments)</span>
+              </div>
+              <div class="chapter-tile">
+                <span class="chapter-num">CHAPTER 05</span>
+                <span class="chapter-name">Job Change Quest</span>
+                <span class="chapter-boss">Bloodred Commander Igris</span>
+              </div>
+              <div class="chapter-tile">
+                <span class="chapter-num">CHAPTER 08</span>
+                <span class="chapter-name">Jeju Island Raid</span>
+                <span class="chapter-boss">The Ant King (Beru S-Rank)</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- BENTO 6: WELLNESS & MUSCLE HEATMAP (Col 4) -->
+          <div class="bento-cell bento-col-4">
+            <div class="bento-badge">
+              <i data-lucide="heart-pulse"></i>
+              <span>FEATURE F // RECOVERY HEATMAP</span>
+            </div>
+            <h3 class="bento-title">Muscular Heatmap & Wellness</h3>
+            <p class="bento-desc">
+              Visualizes fatigue telemetry across muscle groups. Syncs with sleep and hydration 
+              so you don't overtrain before S-Rank dungeon raids.
+            </p>
+
+            <div class="heatmap-analytics-box">
+              <div class="body-svg-canvas">
+                <!-- Anatomical Silhouette SVG with Glowing Hotspots -->
+                <svg viewBox="0 0 100 160" fill="none" stroke="#38bdf8" stroke-width="1.5">
+                  <circle cx="50" cy="18" r="8" fill="rgba(6, 182, 212, 0.2)"/>
+                  <!-- Chest (Optimal) -->
+                  <path d="M36 34 L64 34 L60 50 L40 50 Z" fill="#10b981" opacity="0.6"/>
+                  <!-- Core (Ready) -->
+                  <path d="M40 52 L60 52 L58 74 L42 74 Z" fill="#38bdf8" opacity="0.5"/>
+                  <!-- Quads (Fatigued Crimson) -->
+                  <path d="M34 80 L46 80 L44 116 L34 116 Z" fill="#ef4444" opacity="0.7"/>
+                  <path d="M54 80 L66 80 L66 116 L56 116 Z" fill="#ef4444" opacity="0.7"/>
+                  <!-- Calves -->
+                  <path d="M34 120 L44 120 L42 148 L36 148 Z" fill="#38bdf8" opacity="0.4"/>
+                  <path d="M56 120 L66 120 L64 148 L58 148 Z" fill="#38bdf8" opacity="0.4"/>
+                </svg>
+              </div>
+
+              <div class="muscle-stats-list">
+                <div class="muscle-stat-row">
+                  <div class="muscle-stat-header">
+                    <span>CHEST & DELTS</span>
+                    <span style="color:#10b981;">88% RECOVERED</span>
+                  </div>
+                  <div class="gauge-track">
+                    <div class="gauge-fill" style="width: 88%; background:#10b981;"></div>
+                  </div>
+                </div>
+
+                <div class="muscle-stat-row">
+                  <div class="muscle-stat-header">
+                    <span>QUADS (SQUATS)</span>
+                    <span style="color:#ef4444;">32% FATIGUED</span>
+                  </div>
+                  <div class="gauge-track">
+                    <div class="gauge-fill" style="width: 32%; background:#ef4444;"></div>
+                  </div>
+                </div>
+
+                <div class="muscle-stat-row">
+                  <div class="muscle-stat-header">
+                    <span>HYDRATION & STAMINA</span>
+                    <span style="color:#00f0ff;">94% OPTIMAL</span>
+                  </div>
+                  <div class="gauge-track">
+                    <div class="gauge-fill" style="width: 94%; background:#00f0ff;"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =======================================================================
+         5. HUNTER TESTIMONIALS / "PLAYER LOGS"
+         ======================================================================= -->
+    <section class="testimonials-section section-padding" id="logs">
+      <div class="container">
+        <div class="section-header text-center">
+          <div class="section-tag">[HUNTER COMMUNITY TELEMETRY]</div>
+          <h2 class="section-title">HUNTER TESTIMONIALS // PLAYER LOGS</h2>
+          <p class="section-subtitle">
+            Direct transmissions from hunters who answered the call and cleared their first dungeons.
+          </p>
+        </div>
+
+        <div class="logs-terminal-frame">
+          <div class="terminal-titlebar">
+            <div class="terminal-dots">
+              <span class="t-dot t-dot-red"></span>
+              <span class="t-dot t-dot-yellow"></span>
+              <span class="t-dot t-dot-green"></span>
+            </div>
+            <span class="terminal-caption">system_logs_stream --live-telemetry</span>
+            <span style="font-family:var(--font-mono); font-size:0.7rem; color:var(--text-dim);">ENCRYPTION: QUANTUM-AES</span>
+          </div>
+
+          <div class="terminal-logs-body">
+            <!-- Log 1 -->
+            <div class="log-entry-card">
+              <div class="log-header-tag">
+                <span>[SYS_EVENT_ID: #0482]</span>
+                <span>STATUS: VERIFIED</span>
+              </div>
+              <p class="log-quote-text">
+                "Went from struggling with 10 push-ups to clearing 100 daily without breaking form. 
+                I started as an E-Rank rookie and I just earned my B-Rank license. The system doesn't lie."
+              </p>
+              <div class="log-author-info">
+                <span class="log-rank-pill">B-RANK</span>
+                <span class="log-author-name">Alex M. // Calisthenics Vanguard</span>
+              </div>
+            </div>
+
+            <!-- Log 2 -->
+            <div class="log-entry-card">
+              <div class="log-header-tag">
+                <span>[SYS_EVENT_ID: #1209]</span>
+                <span>STATUS: VERIFIED</span>
+              </div>
+              <p class="log-quote-text">
+                "Walking to real GPS Gates got me hitting 15,000 steps a day without ever feeling like 
+                boring cardio. Found an A-Rank Gate at the city park and extracted my first Ice Bear shadow!"
+              </p>
+              <div class="log-author-info">
+                <span class="log-rank-pill" style="background:#a855f7; color:#fff;">A-RANK</span>
+                <span class="log-author-name">Elena R. // Trail Raider</span>
+              </div>
+            </div>
+
+            <!-- Log 3 -->
+            <div class="log-entry-card">
+              <div class="log-header-tag">
+                <span>[SYS_EVENT_ID: #0941]</span>
+                <span>STATUS: VERIFIED</span>
+              </div>
+              <p class="log-quote-text">
+                "The Penalty Zone siren actually scared me into finishing my last 30 squats at 11:45 PM. 
+                Zero chance I was running from sand centipedes for 4 hours. 10/10 fear-driven discipline."
+              </p>
+              <div class="log-author-info">
+                <span class="log-rank-pill" style="background:#f59e0b; color:#020617;">S-RANK</span>
+                <span class="log-author-name">Darius K. // Shadow Striker</span>
+              </div>
+            </div>
+
+            <!-- Log 4 -->
+            <div class="log-entry-card">
+              <div class="log-header-tag">
+                <span>[SYS_EVENT_ID: #2150]</span>
+                <span>STATUS: VERIFIED</span>
+              </div>
+              <p class="log-quote-text">
+                "The TensorFlow camera skeleton tracking is unbelievable. You can't cheat reps — it enforces 
+                full lockout at the top and chest depth at the bottom. True martial arts grade calibration."
+              </p>
+              <div class="log-author-info">
+                <span class="log-rank-pill">B-RANK</span>
+                <span class="log-author-name">Marcus T. // Strength Hunter</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =======================================================================
+         6. FAQ SECTION (Native Details / Mutually Exclusive Disclosure)
+         ======================================================================= -->
+    <section class="faq-section section-padding" id="faq">
+      <div class="container">
+        <div class="section-header text-center">
+          <div class="section-tag">[SYSTEM KNOWLEDGE BASE]</div>
+          <h2 class="section-title">FREQUENTLY ASKED QUESTIONS</h2>
+          <p class="section-subtitle">
+            Everything you need to know about the System, on-device AI privacy, and Hunter progression.
+          </p>
+        </div>
+
+        <div class="faq-accordion-group">
+          <!-- FAQ 1 -->
+          <details class="system-faq-item" name="system-faq" open>
+            <summary class="system-faq-summary">
+              <span>Is the SYSTEM app completely free to use?</span>
+              <i data-lucide="chevron-down" class="faq-icon-chevron"></i>
+            </summary>
+            <div class="system-faq-content">
+              Yes! The core Hunter experience — including the Daily Quest engine, TensorFlow AI camera rep 
+              tracking, and Hunter Rank progression — is 100% free forever. An optional Monarch Guild Pass 
+              unlocks premium voice packs, customized holographic HUD themes, and advanced AFK Shadow Mining multipliers.
+            </div>
+          </details>
+
+          <!-- FAQ 2 -->
+          <details class="system-faq-item" name="system-faq">
+            <summary class="system-faq-summary">
+              <span>How does the AI camera rep tracking work, and is my camera feed private?</span>
+              <i data-lucide="chevron-down" class="faq-icon-chevron"></i>
+            </summary>
+            <div class="system-faq-content">
+              Your privacy is guarded with absolute zero-compromise encryption. We use lightweight TensorFlow.js models 
+              that execute 100% locally on your device’s GPU/NPU. Your camera feed is processed in volatile memory to 
+              extract skeletal coordinates and immediately discarded. No video, photo, or audio streams ever leave your phone.
+            </div>
+          </details>
+
+          <!-- FAQ 3 -->
+          <details class="system-faq-item" name="system-faq">
+            <summary class="system-faq-summary">
+              <span>Do I need gym equipment or a fitness membership?</span>
+              <i data-lucide="chevron-down" class="faq-icon-chevron"></i>
+            </summary>
+            <div class="system-faq-content">
+              None required! Just like Sung Jin-Woo's humble beginnings, the foundational workouts focus on calisthenics 
+              and bodyweight mastery: push-ups, squats, sit-ups, pull-ups, and running. For advanced hunters with gym access, 
+              the System allows custom quest modifiers (bench press, deadlifts, and kettlebell swings).
+            </div>
+          </details>
+
+          <!-- FAQ 4 -->
+          <details class="system-faq-item" name="system-faq">
+            <summary class="system-faq-summary">
+              <span>What actually happens if I fail the Daily Quest before midnight?</span>
+              <i data-lucide="chevron-down" class="faq-icon-chevron"></i>
+            </summary>
+            <div class="system-faq-content">
+              If the midnight timer reaches 00:00:00 without completing your daily quota, the System issues a critical warning. 
+              To lift the penalty and regain full stat gains, you must clear a timed cardio survival quest (running or brisk walking) 
+              to "evade" the giant centipedes of the Penalty Zone desert.
+            </div>
+          </details>
+
+          <!-- FAQ 5 -->
+          <details class="system-faq-item" name="system-faq">
+            <summary class="system-faq-summary">
+              <span>How does GPS Dungeon Hunting work in real cities?</span>
+              <i data-lucide="chevron-down" class="faq-icon-chevron"></i>
+            </summary>
+            <div class="system-faq-content">
+              The System overlays dynamic Gate coordinates onto real-world streets, parks, and landmarks using geolocation. 
+              As you walk or jog, your movement clears the "Fog of War" on your radar. Approaching within 50 meters of a Gate 
+              triggers the dungeon raid encounter where reps deal combat damage to the guardian boss.
+            </div>
+          </details>
+
+          <!-- FAQ 6 -->
+          <details class="system-faq-item" name="system-faq">
+            <summary class="system-faq-summary">
+              <span>Can I synchronize my data with Apple Health, Google Fit, and Garmin?</span>
+              <i data-lucide="chevron-down" class="faq-icon-chevron"></i>
+            </summary>
+            <div class="system-faq-content">
+              Yes, full bidirectional sync is supported for Apple HealthKit, Google Health Connect, and Garmin Connect. 
+              Your daily step count, resting heart rate, running distance, and sleep analysis automatically feed into 
+              your Hunter HP/MP restoration stats.
+            </div>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- =======================================================================
+         7. FINAL CALL TO ACTION & AWAKENING BANNER
+         ======================================================================= -->
+    <section class="final-cta-section section-padding" id="download">
+      <div class="container">
+        <div class="cta-banner-wrapper">
+          <div class="tech-bracket-tl"></div>
+          <div class="tech-bracket-tr"></div>
+          <div class="tech-bracket-bl"></div>
+          <div class="tech-bracket-br"></div>
+
+          <div class="section-tag" style="margin-bottom: 1.5rem;">
+            <i data-lucide="zap" style="width:14px; height:14px; color:#00f0ff;"></i>
+            <span>[SYSTEM: AWAKENING // MONARCH CLASS ASCENSION]</span>
+          </div>
+
+          <h2 class="cta-title">Your Awakening Starts Today.</h2>
+          <p class="cta-subtitle">
+            Will you remain the weakest hunter in a world that never pauses... or will you arise and become the Monarch?
+          </p>
+
+          <div class="cta-actions-row">
+            <a href="#" class="app-store-pill">
+              <svg class="app-store-icon" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M15.97 6.37c.64-.78 1.08-1.86.96-2.95-1 .04-2.16.67-2.84 1.46-.58.67-1.09 1.77-.96 2.83 1.12.09 2.22-.57 2.84-1.34z"/>
+              </svg>
+              <div class="app-store-text">
+                <span class="app-store-label">Download on the</span>
+                <span class="app-store-brand">App Store</span>
+              </div>
+            </a>
+
+            <a href="#" class="app-store-pill">
+              <svg class="app-store-icon" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M3.6 2.3c-.3.3-.5.9-.5 1.5v16.4c0 .6.2 1.2.5 1.5l.1.1 9.2-9.2v-.2L3.7 2.2l-.1.1zM17.1 16.3l-3.3-3.3v-.2l3.3-3.3.1.1 3.9 2.2c1.1.6 1.1 1.6 0 2.2l-3.9 2.2-.1.1zM13.8 12.8L4.6 22c.4.4 1 .4 1.8 0l10.9-6.2-3.5-3zM13.8 11.2l3.5-3-10.9-6.2c-.8-.4-1.4-.4-1.8 0l9.2 9.2z"/>
+              </svg>
+              <div class="app-store-text">
+                <span class="app-store-label">GET IT ON</span>
+                <span class="app-store-brand">Google Play</span>
+              </div>
+            </a>
+
+            <a href="#status-window" class="btn btn-outline-cyan">
+              <i data-lucide="play"></i> Launch Web System
+            </a>
+          </div>
+
+          <div style="font-family:var(--font-mono); font-size:0.8rem; color:var(--cyan-light);">
+            <i data-lucide="users" style="display:inline; width:14px; height:14px; vertical-align:middle;"></i>
+            OVER 1,240,000+ REGISTERED HUNTERS WORLDWIDE • EARLY ACCESS ACTIVE
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- =========================================================================
+       FOOTER
+       ========================================================================= -->
+  <footer class="system-footer">
+    <div class="container">
+      <div class="footer-main-grid">
+        <div class="footer-brand-col">
+          <a href="index.html#hero" class="system-logo">
+            <span class="logo-bracket">[</span>
+            <span class="logo-main">SYSTEM:</span>
+            <span class="logo-accent">AWAKENING</span>
+            <span class="logo-bracket">]</span>
+          </a>
+          <p>
+            SYSTEM: Awakening is the world's premier gamified fitness tracker inspired by the Solo Leveling 
+            lore. Transform your workouts into dungeon raids, track reps with on-device AI, and rise as a Monarch.
+          </p>
+        </div>
+
+        <div>
+          <h4 class="footer-heading">SYSTEM NAVIGATION</h4>
+          <ul class="footer-links-list">
+            <li><a href="#hero">Daily Quest</a></li>
+            <li><a href="#status-window">Status HUD Preview</a></li>
+            <li><a href="#rank-calculator">Rank Evaluation</a></li>
+            <li><a href="#features">Bento Feature Grid</a></li>
+            <li><a href="#logs">Hunter Player Logs</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer-heading">HUNTER GUILD & LEGAL</h4>
+          <ul class="footer-links-list">
+            <li><a href="https://discord.gg" target="_blank" rel="noopener">Join Official Discord</a></li>
+            <li><a href="#features">Leaderboards & Guilds</a></li>
+            <li><a href="#features">Manhwa Lore Guide</a></li>
+            <li><a href="privacy.html">Security & Privacy</a></li>
+            <li><a href="terms.html">Terms of Service</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer-heading">SECURITY & ENCRYPTION</h4>
+          <ul class="footer-links-list">
+            <li><span style="color:#10b981;">● On-Device Vision (Zero Cloud)</span></li>
+            <li><span style="color:#38bdf8;">● Geolocation Obfuscation</span></li>
+            <li><span style="color:var(--text-dim);">Build: v2.4.0-HUNTER-RELEASE</span></li>
+            <li><span style="color:var(--text-dim);">Server: ASIA-KR-SEOUL-01</span></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom-bar">
+        <p class="footer-disclaimer">
+          <strong>DISCLAIMER:</strong> This is an independent fan-made fitness tribute inspired by the Solo Leveling 
+          novel and manhwa by Chugong and DUBU (REDICE STUDIO). Not officially affiliated with or endorsed by 
+          D&amp;C Media, Netmarble, or A-1 Pictures.
+        </p>
+        <p>&copy; 2026 SYSTEM FITNESS RPG. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- =========================================================================
+       8. FLOATING QUEST PROGRESS TRACKER (Bottom Right)
+       ========================================================================= -->
+  <aside class="floating-quest-tracker" id="floatingQuestTracker" aria-label="Current System Mission Progress">
+    <div class="tracker-header" id="trackerHeader">
+      <div class="tracker-header-left">
+        <span class="tracker-title">[SYSTEM MISSION]</span>
+        <span class="tracker-count-badge" id="trackerProgressCount">1 / 5 DONE</span>
+      </div>
+      <button type="button" class="tracker-toggle-btn" id="trackerToggleBtn" aria-label="Minimize or Expand Mission Tracker">
+        <i data-lucide="chevron-down" id="trackerToggleIcon"></i>
+      </button>
+    </div>
+    <ul class="tracker-checklist" id="trackerChecklist">
+      <li class="tracker-item done" id="questTaskAwaken">
+        <i data-lucide="check-circle-2"></i>
+        <span>Awaken to the System</span>
+      </li>
+      <li class="tracker-item" id="questTaskRank">
+        <i data-lucide="circle"></i>
+        <span>Calculate Hunter Rank</span>
+      </li>
+      <li class="tracker-item" id="questTaskStats">
+        <i data-lucide="circle"></i>
+        <span>Allocate Stat Points</span>
+      </li>
+      <li class="tracker-item" id="questTaskArise">
+        <i data-lucide="circle"></i>
+        <span>Command ARISE!</span>
+      </li>
+      <li class="tracker-item" id="questTaskRadar">
+        <i data-lucide="circle"></i>
+        <span>Inspect Nearby Gates</span>
+      </li>
+    </ul>
+  </aside>
+
+  <!-- Back to Top Float Button -->
+  <button type="button" class="back-top-float" id="backToTopBtn" aria-label="Back to Top">
+    <i data-lucide="arrow-up"></i>
+  </button>
+
+  <!-- =========================================================================
+       9. PENALTY ZONE ALERT FULLSCREEN SIMULATION MODAL
+       ========================================================================= -->
+  <div class="penalty-modal-overlay" id="penaltyModalOverlay" role="alertdialog" aria-modal="true" aria-labelledby="penaltyTitle">
+    <div class="penalty-alert-card">
+      <div class="tech-bracket-tl" style="border-color:#ef4444;"></div>
+      <div class="tech-bracket-tr" style="border-color:#ef4444;"></div>
+      <div class="tech-bracket-bl" style="border-color:#ef4444;"></div>
+      <div class="tech-bracket-br" style="border-color:#ef4444;"></div>
+
+      <h2 class="penalty-siren-title" id="penaltyTitle">
+        [PENALTY ZONE ACTIVATION IMMINENT]
+      </h2>
+
+      <p class="penalty-details-text">
+        SYSTEM DETECTED INCOMPLETE DAILY QUEST QUOTA.<br><br>
+        <strong>ZONE:</strong> ENDLESS DESERT OF THE GIANT CENTIPEDES<br>
+        <strong>SURVIVAL OBJECTIVE:</strong> RUN FOR 4 HOURS WITHOUT STOPPING.<br>
+        <strong>PENALTY DURATION:</strong> 04:00:00
+      </p>
+
+      <button type="button" class="btn btn-crimson" id="btnClosePenalty">
+        <i data-lucide="shield-alert"></i> ESCAPE PENALTY SIMULATION
+      </button>
+    </div>
+  </div>
+
+  <!-- Master JavaScript Application -->
+  <script src="script.js"></script>
+</body>
+</html>

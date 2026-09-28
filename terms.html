@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Terms of Service &amp; Hunter Covenant | SYSTEM: Awakening</title>
+  <meta name="description" content="Terms of Service, Hunter Covenant, and Health Disclaimer for SYSTEM: Awakening gamified fitness tracker.">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Orbitron:wght@500;600;700;800;900&family=Rajdhani:wght@500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <!-- Master Stylesheet -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Ambient CRT Scanline Overlay -->
+  <div class="scanline-overlay" aria-hidden="true"></div>
+  <div class="cyber-grid-bg" aria-hidden="true"></div>
+
+  <!-- Custom Cursor -->
+  <div class="system-cursor-dot" id="cursorDot" aria-hidden="true"></div>
+  <div class="system-cursor-ring" id="cursorRing" aria-hidden="true"></div>
+
+  <!-- Header Navigation -->
+  <header class="system-header" id="systemHeader">
+    <div class="container nav-container">
+      <a href="index.html" class="system-logo" aria-label="System: Awakening Home">
+        <span class="logo-bracket">[</span>
+        <span class="logo-main">SYSTEM:</span>
+        <span class="logo-accent">AWAKENING</span>
+        <span class="logo-bracket">]</span>
+      </a>
+
+      <nav aria-label="Main Navigation">
+        <ul class="nav-menu">
+          <li><a href="index.html#hero" class="nav-link">Home</a></li>
+          <li><a href="index.html#status-window" class="nav-link">Status HUD</a></li>
+          <li><a href="index.html#features" class="nav-link">Features</a></li>
+          <li><a href="privacy.html" class="nav-link">Privacy</a></li>
+          <li><a href="terms.html" class="nav-link" style="color:var(--cyan-glow);">Terms</a></li>
+        </ul>
+      </nav>
+
+      <div class="nav-actions">
+        <button type="button" class="sfx-toggle-btn" id="sfxToggleBtn" aria-label="Toggle Sound Effects">
+          <i data-lucide="volume-2" id="sfxIcon"></i>
+          <span id="sfxLabel">SFX: ON</span>
+        </button>
+
+        <a href="index.html" class="nav-arise-btn" id="navAriseBtn">
+          <i data-lucide="arrow-left"></i>
+          <span>Return</span>
+        </a>
+
+        <button type="button" class="mobile-toggle-btn" id="mobileToggleBtn" aria-label="Open Navigation Menu" aria-expanded="false">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer -->
+  <div class="mobile-nav-drawer" id="mobileNavDrawer" aria-hidden="true">
+    <a href="index.html#hero" class="nav-link mobile-link">Home</a>
+    <a href="index.html#status-window" class="nav-link mobile-link">Status HUD</a>
+    <a href="index.html#features" class="nav-link mobile-link">Features</a>
+    <a href="privacy.html" class="nav-link mobile-link">Security &amp; Privacy</a>
+    <a href="terms.html" class="nav-link mobile-link" style="color:var(--cyan-glow);">Terms of Service</a>
+    <a href="index.html" class="btn btn-primary btn-lg mobile-link" style="margin-top: 1rem;">
+      <i data-lucide="arrow-left"></i> Return to System
+    </a>
+  </div>
+
+  <main>
+    <section class="legal-page-hero">
+      <div class="container">
+        <div class="legal-card-container">
+          <div class="tech-bracket-tl"></div>
+          <div class="tech-bracket-tr"></div>
+          <div class="tech-bracket-bl"></div>
+          <div class="tech-bracket-br"></div>
+
+          <div class="section-tag" style="margin-bottom: 1rem;">
+            <i data-lucide="scroll" style="width:14px; height:14px; color:#00f0ff;"></i>
+            <span>[HUNTER GUILD COVENANT // LEGAL CODE OF CONDUCT]</span>
+          </div>
+
+          <h1 class="section-title" style="margin-bottom: 0.5rem;">TERMS OF SERVICE</h1>
+          <p class="section-subtitle" style="margin-left:0; margin-bottom: 1.5rem; text-align:left;">
+            The rules of engagement for every Hunter who awakens to the System. Read carefully before entering physical training or dungeon raids.
+          </p>
+
+          <div class="legal-meta-bar">
+            <span>COVENANT ID: #SYS-TOS-2026-FINAL</span>
+            <span>STANDARD: HUNTER ASSOCIATION DIRECTIVE</span>
+            <span style="color:#f59e0b;">JURISDICTION: GLOBAL DIGITAL FITNESS</span>
+          </div>
+
+          <!-- Section 1 -->
+          <article class="legal-article-section">
+            <h2 class="legal-article-title">
+              <i data-lucide="check-square"></i>
+              <span>1. Acceptance of the Hunter Covenant</span>
+            </h2>
+            <div class="legal-article-body">
+              <p>
+                By downloading, accessing, installing, or interacting with <strong>SYSTEM: Awakening</strong> ("the Application", "the System"), you enter into a legally binding agreement with the development team. If you do not accept these terms, you must decline the Quest Notification and immediately delete the Application from your device.
+              </p>
+              <p>
+                You affirm that you are at least 13 years of age (or 16 in applicable European jurisdictions) and legally competent to enter into this agreement.
+              </p>
+            </div>
+          </article>
+
+          <!-- Section 2 -->
+          <article class="legal-article-section">
+            <h2 class="legal-article-title">
+              <i data-lucide="alert-triangle" style="color:#ef4444;"></i>
+              <span style="color:#ef4444;">2. Medical &amp; Physical Fitness Disclaimer [MANDATORY NOTICE]</span>
+            </h2>
+            <div class="legal-article-body">
+              <div class="legal-callout-box" style="border-left-color:#ef4444; background:rgba(239,68,68,0.08);">
+                [CRITICAL HEALTH WARNING]: SYSTEM: Awakening is a motivational fitness game and is NOT a medical diagnosis tool or certified personal trainer. Always consult a qualified physician before commencing any physical workout regimen.
+              </div>
+              <p>
+                You expressly acknowledge and agree that:
+              </p>
+              <ul>
+                <li><strong>Individual Physical Limits:</strong> You are solely responsible for knowing and respecting your physical limitations. If you experience chest pain, severe shortness of breath, dizziness, joint agony, or nausea, stop your workout immediately and seek professional medical care.</li>
+                <li><strong>The "Penalty Zone" Game Mechanics:</strong> The "Penalty Zone" desert centipede survival challenge is exclusively an in-game roleplay narrative. It must <em>never</em> be used as an excuse to train while injured, ill, sleep-deprived, or in unsafe meteorological conditions. Rest is a vital stat requirement.</li>
+                <li><strong>Assumption of Risk:</strong> Engaging in calisthenics, distance running, weightlifting, and mobility exercises carries inherent risks of physical injury. You assume all voluntary risks associated with your workouts.</li>
+              </ul>
+            </div>
+          </article>
+
+          <!-- Section 3 -->
+          <article class="legal-article-section">
+            <h2 class="legal-article-title">
+              <i data-lucide="compass"></i>
+              <span>3. Real-World GPS Exploration Safety Guidelines</span>
+            </h2>
+            <div class="legal-article-body">
+              <p>
+                When exploring real-world GPS Gates or clearing Fog of War across your neighborhood:
+              </p>
+              <ul>
+                <li><strong>Situational Awareness:</strong> NEVER stare at your phone screen while crossing streets, navigating vehicular traffic, or operating bicycles, skateboards, or motor vehicles. Always stop in a safe, secure pedestrian area before checking Gate coordinates.</li>
+                <li><strong>Respect Private Property:</strong> NEVER trespass on private residences, commercial restricted property, construction sites, rail lines, or hazardous terrain to reach a Gate. If a Gate is inaccessible, use the in-app "Relocate Gate" command.</li>
+                <li><strong>Nocturnal Safety:</strong> Avoid deserted or poorly lit zones during night-time exploration. Always prioritize real-world physical safety over in-game loot drops.</li>
+              </ul>
+            </div>
+          </article>
+
+          <!-- Section 4 -->
+          <article class="legal-article-section">
+            <h2 class="legal-article-title">
+              <i data-lucide="award"></i>
+              <span>4. Fan Tribute &amp; Intellectual Property Notice</span>
+            </h2>
+            <div class="legal-article-body">
+              <p>
+                <strong>SYSTEM: Awakening</strong> is an independent, non-commercial fan-created fitness application and roleplay tribute inspired by the celebrated web novel and manhwa <em>Solo Leveling</em> (나 혼자만 레벨업), written by <strong>Chugong</strong> with art by <strong>DUBU (REDICE STUDIO)</strong>.
+              </p>
+              <p>
+                This application is not officially endorsed by, partnered with, or affiliated with D&amp;C Media Co., Ltd., KakaoPage Corp., Netmarble Corp., or A-1 Pictures Inc. All references, names, character inspirations (such as Igris, Beru, Sung Jin-Woo), and stylistic motifs are utilized in good faith under fair-use commentary, parody, and fan community tribute principles for physical fitness promotion.
+              </p>
+            </div>
+          </article>
+
+          <!-- Section 5 -->
+          <article class="legal-article-section">
+            <h2 class="legal-article-title">
+              <i data-lucide="coins"></i>
+              <span>5. Virtual Items, Mana Crystals &amp; Shadow Armies</span>
+            </h2>
+            <div class="legal-article-body">
+              <p>
+                All virtual rewards earned in the application — including Mana Crystals, Gold, Hunter Ranks (E to S), equipment artifacts, and extracted Shadow Soldiers:
+              </p>
+              <ul>
+                <li>Are purely virtual in-game tokens of achievement with zero real-world cash or monetary value.</li>
+                <li>Cannot be traded, exchanged, or redeemed for fiat currency, cryptocurrency, or physical merchandise.</li>
+                <li>Are non-transferable between accounts and subject to reset in the event of persistent terms violations or account deletion.</li>
+              </ul>
+            </div>
+          </article>
+
+          <!-- Section 6 -->
+          <article class="legal-article-section">
+            <h2 class="legal-article-title">
+              <i data-lucide="shield-alert"></i>
+              <span>6. Code of Conduct &amp; Prohibited Exploits</span>
+            </h2>
+            <div class="legal-article-body">
+              <p>
+                To maintain competitive integrity and fair camaraderie across the Hunter Association:
+              </p>
+              <ul>
+                <li><strong>No GPS Spoofing:</strong> Modifying coordinates via fake GPS software or emulation tools to automatically clear Gates without walking is strictly prohibited.</li>
+                <li><strong>No Rep Exploitation:</strong> Attempting to artificially trick the TensorFlow camera vision with looping videos, automated bots, or mechanical rigs will result in leaderboard disqualification.</li>
+                <li><strong>Zero Tolerance for Toxicity:</strong> Harassment, hate speech, or abuse within Guild chats or community forums will trigger an instantaneous, permanent ban.</li>
+              </ul>
+            </div>
+          </article>
+
+          <div class="legal-actions-footer">
+            <a href="index.html" class="btn btn-outline-cyan">
+              <i data-lucide="arrow-left"></i> Return to Homepage
+            </a>
+            <a href="privacy.html" class="btn btn-secondary">
+              Review Security &amp; Privacy Policy <i data-lucide="arrow-right"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="system-footer">
+    <div class="container">
+      <div class="footer-main-grid">
+        <div class="footer-brand-col">
+          <a href="index.html" class="system-logo">
+            <span class="logo-bracket">[</span>
+            <span class="logo-main">SYSTEM:</span>
+            <span class="logo-accent">AWAKENING</span>
+            <span class="logo-bracket">]</span>
+          </a>
+          <p>
+            SYSTEM: Awakening is the world's premier gamified fitness tracker inspired by the Solo Leveling 
+            lore. Transform your workouts into dungeon raids, track reps with on-device AI, and rise as a Monarch.
+          </p>
+        </div>
+
+        <div>
+          <h4 class="footer-heading">NAVIGATION</h4>
+          <ul class="footer-links-list">
+            <li><a href="index.html#hero">Daily Quest</a></li>
+            <li><a href="index.html#status-window">Status HUD Preview</a></li>
+            <li><a href="index.html#rank-calculator">Rank Evaluation</a></li>
+            <li><a href="index.html#features">Bento Features</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer-heading">LEGAL &amp; POLICIES</h4>
+          <ul class="footer-links-list">
+            <li><a href="privacy.html">Security &amp; Privacy</a></li>
+            <li><a href="terms.html" style="color:var(--cyan-glow);">Terms of Service</a></li>
+            <li><a href="https://discord.gg" target="_blank" rel="noopener">Official Discord</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer-heading">SECURITY SPECS</h4>
+          <ul class="footer-links-list">
+            <li><span style="color:#10b981;">● 100% On-Device TensorFlow</span></li>
+            <li><span style="color:#38bdf8;">● Zero Remote Frame Caching</span></li>
+            <li><span style="color:var(--text-dim);">Protocol: TLS 1.3 / AES-256</span></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom-bar">
+        <p class="footer-disclaimer">
+          <strong>DISCLAIMER:</strong> Fan tribute inspired by Solo Leveling by Chugong and DUBU (REDICE STUDIO). 
+          Not affiliated with D&amp;C Media or KakaoPage.
+        </p>
+        <p>&copy; 2026 SYSTEM: Awakening. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

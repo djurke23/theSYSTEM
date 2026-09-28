@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Security & Privacy Protocol | SYSTEM: Awakening</title>
+  <meta name="description" content="Security & Privacy Policy for SYSTEM: Awakening. 100% on-device AI camera tracking, zero video storage, local GPS gate obfuscation, and quantum-grade biometric privacy.">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Orbitron:wght@500;600;700;800;900&family=Rajdhani:wght@500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <!-- Master Stylesheet -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Ambient CRT Scanline Overlay -->
+  <div class="scanline-overlay" aria-hidden="true"></div>
+  <div class="cyber-grid-bg" aria-hidden="true"></div>
+
+  <!-- Custom Cursor -->
+  <div class="system-cursor-dot" id="cursorDot" aria-hidden="true"></div>
+  <div class="system-cursor-ring" id="cursorRing" aria-hidden="true"></div>
+
+  <!-- Header Navigation -->
+  <header class="system-header" id="systemHeader">
+    <div class="container nav-container">
+      <a href="index.html" class="system-logo" aria-label="System: Awakening Home">
+        <span class="logo-bracket">[</span>
+        <span class="logo-main">SYSTEM:</span>
+        <span class="logo-accent">AWAKENING</span>
+        <span class="logo-bracket">]</span>
+      </a>
+
+      <nav aria-label="Main Navigation">
+        <ul class="nav-menu">
+          <li><a href="index.html#hero" class="nav-link">Home</a></li>
+          <li><a href="index.html#status-window" class="nav-link">Status HUD</a></li>
+          <li><a href="index.html#features" class="nav-link">Features</a></li>
+          <li><a href="privacy.html" class="nav-link" style="color:var(--cyan-glow);">Privacy</a></li>
+          <li><a href="terms.html" class="nav-link">Terms</a></li>
+        </ul>
+      </nav>
+
+      <div class="nav-actions">
+        <button type="button" class="sfx-toggle-btn" id="sfxToggleBtn" aria-label="Toggle Sound Effects">
+          <i data-lucide="volume-2" id="sfxIcon"></i>
+          <span id="sfxLabel">SFX: ON</span>
+        </button>
+
+        <a href="index.html" class="nav-arise-btn" id="navAriseBtn">
+          <i data-lucide="arrow-left"></i>
+          <span>Return</span>
+        </a>
+
+        <button type="button" class="mobile-toggle-btn" id="mobileToggleBtn" aria-label="Open Navigation Menu" aria-expanded="false">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer -->
+  <div class="mobile-nav-drawer" id="mobileNavDrawer" aria-hidden="true">
+    <a href="index.html#hero" class="nav-link mobile-link">Home</a>
+    <a href="index.html#status-window" class="nav-link mobile-link">Status HUD</a>
+    <a href="index.html#features" class="nav-link mobile-link">Features</a>
+    <a href="privacy.html" class="nav-link mobile-link" style="color:var(--cyan-glow);">Security &amp; Privacy</a>
+    <a href="terms.html" class="nav-link mobile-link">Terms of Service</a>
+    <a href="index.html" class="btn btn-primary btn-lg mobile-link" style="margin-top: 1rem;">
+      <i data-lucide="arrow-left"></i> Return to System
+    </a>
+  </div>
+
+  <main>
+    <section class="legal-page-hero">
+      <div class="container">
+        <div class="legal-card-container">
+          <div class="tech-bracket-tl"></div>
+          <div class="tech-bracket-tr"></div>
+          <div class="tech-bracket-bl"></div>
+          <div class="tech-bracket-br"></div>
+
+          <div class="section-tag" style="margin-bottom: 1rem;">
+            <i data-lucide="shield-check" style="width:14px; height:14px; color:#00f0ff;"></i>
+            <span>[DATA INTEGRITY PROTOCOL // ENCRYPTION: QUANTUM-AES]</span>
+          </div>
+
+          <h1 class="section-title" style="margin-bottom: 0.5rem;">SECURITY &amp; PRIVACY POLICY</h1>
+          <p class="section-subtitle" style="margin-left:0; margin-bottom: 1.5rem; text-align:left;">
+            In the world of Hunters, intelligence is life. We guard your physical telemetry, camera vision, and biometric stats with zero-compromise encryption.
+          </p>
+
+          <div class="legal-meta-bar">
+            <span>PROTOCOL CODE: #SYS-SEC-2026-V2</span>
+            <span>LAST COMPILED: SEPTEMBER 2026</span>
+            <span style="color:#10b981;">STATUS: 100% ON-DEVICE ACTIVE</span>
+          </div>
+
+          <!-- Section 1 -->
+          <article class="legal-article-section">
+            <h2 class="legal-article-title">
+              <i data-lucide="camera-off"></i>
+              <span>1. 100% On-Device AI Camera Vision (Shadow Scanner Mode)</span>
+            </h2>
+            <div class="legal-article-body">
+              <p>
+                The cornerstone of <strong>SYSTEM: Awakening</strong> is absolute visual privacy. When utilizing our AI Camera Rep Tracking:
+              </p>
+              <ul>
+                <li><strong>Local Neural Execution:</strong> All computer vision models (TensorFlow.js) execute strictly on your device's local GPU or Neural Engine via WebGL/WebGPU shaders.</li>
+                <li><strong>Zero Frame Storage:</strong> Camera image frames exist solely in volatile hardware RAM for less than 16 milliseconds per frame to calculate 17 skeletal joint coordinates (elbows, shoulders, hips, knees).</li>
+                <li><strong>No Cloud Uplink:</strong> Image feeds, snapshots, face scans, or video files are <em>never</em> recorded, cached on disk, or uploaded to external servers.</li>
+                <li><strong>Holographic Silhouette:</strong> What you see on screen is an abstract neon wireframe drawn over a black canvas — your private physical space remains completely invisible to the network.</li>
+              </ul>
+            </div>
+          </article>
+
+          <!-- Section 2 -->
+          <article class="legal-article-section">
+            <h2 class="legal-article-title">
+              <i data-lucide="map-pin"></i>
+              <span>2. Geolocation &amp; Real-World GPS Gate Obfuscation</span>
+            </h2>
+            <div class="legal-article-body">
+              <p>
+                Our real-world GPS Gates and Fog of War map turn physical outdoor walking and running into dungeon raids. To protect your real-life security:
+              </p>
+              <ul>
+                <li><strong>Geospatial Hashing:</strong> Coordinates are obfuscated using localized spatial hashing algorithms. We do not track or log specific residential addresses or private habitations.</li>
+                <li><strong>Public Gate Placement:</strong> Magical Gates spawn strictly in designated public zones (parks, pedestrian squares, hiking trails, city monuments) and never on private property or restricted zones.</li>
+                <li><strong>Private Route Telemetry:</strong> Your running paths and step routes remain encrypted on your device and are never shared publicly on competitive leaderboards without your explicit authorization.</li>
+              </ul>
+            </div>
+          </article>
+
+          <!-- Section 3 -->
+          <article class="legal-article-section">
+            <h2 class="legal-article-title">
+              <i data-lucide="heart-pulse"></i>
+              <span>3. Biometric &amp; Health Data Synchronization</span>
+            </h2>
+            <div class="legal-article-body">
+              <p>
+                When you connect Apple HealthKit, Google Health Connect, or Garmin:
+              </p>
+              <ul>
+                <li>We request read-only access strictly for active calories burned, daily step counts, running distance, and resting heart rate.</li>
+                <li>This data is solely used to calculate your in-app Hunter HP/MP recovery rates and muscular fatigue heatmaps.</li>
+                <li>Health metrics are never correlated with advertising IDs or shared with health insurance providers, data brokers, or commercial syndicates.</li>
+              </ul>
+            </div>
+          </article>
+
+          <!-- Section 4 -->
+          <article class="legal-article-section">
+            <h2 class="legal-article-title">
+              <i data-lucide="lock"></i>
+              <span>4. Data Storage &amp; Quantum-Grade Encryption</span>
+            </h2>
+            <div class="legal-article-body">
+              <p>
+                All account credentials, Hunter ID cards, inventory gear, and Shadow Army rosters are protected using military-grade encryption:
+              </p>
+              <div class="legal-callout-box">
+                [SYSTEM ENCRYPTION STANDARD]: AES-256-GCM local storage encryption with TLS 1.3 transport security for all Guild communications.
+              </div>
+              <p>
+                We do not sell, rent, monetize, or disclose your personal data to any commercial advertisers. You are the Hunter; your data is your mana.
+              </p>
+            </div>
+          </article>
+
+          <!-- Section 5 -->
+          <article class="legal-article-section">
+            <h2 class="legal-article-title">
+              <i data-lucide="trash-2"></i>
+              <span>5. User Rights &amp; Nuclear Data Wipe</span>
+            </h2>
+            <div class="legal-article-body">
+              <p>
+                Under international regulations (GDPR, CCPA, and Korean Personal Information Protection Act), you maintain total autonomy over your data:
+              </p>
+              <ul>
+                <li><strong>Data Export:</strong> Download an unencrypted copy of your full Hunter quest logs, workout records, and rank history in standard JSON format at any time.</li>
+                <li><strong>Permanent Account Deletion:</strong> Triggering the in-app "System Resignation / Wipe" permanently purges all cloud backups, local cache, and guild memberships within 24 hours.</li>
+              </ul>
+            </div>
+          </article>
+
+          <!-- Section 6 -->
+          <article class="legal-article-section">
+            <h2 class="legal-article-title">
+              <i data-lucide="mail"></i>
+              <span>6. Contact the Hunter Security Bureau</span>
+            </h2>
+            <div class="legal-article-body">
+              <p>
+                For security inquiries, vulnerability disclosures, or data requests, transmit your dispatch directly to:
+              </p>
+              <p style="font-family:var(--font-mono); color:var(--cyan-glow); margin-top:0.5rem;">
+                <strong>privacy@system-awakening.app</strong> // ATTN: Chief Information Security Officer
+              </p>
+            </div>
+          </article>
+
+          <div class="legal-actions-footer">
+            <a href="index.html" class="btn btn-outline-cyan">
+              <i data-lucide="arrow-left"></i> Return to Homepage
+            </a>
+            <a href="terms.html" class="btn btn-secondary">
+              Review Terms of Service <i data-lucide="arrow-right"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="system-footer">
+    <div class="container">
+      <div class="footer-main-grid">
+        <div class="footer-brand-col">
+          <a href="index.html" class="system-logo">
+            <span class="logo-bracket">[</span>
+            <span class="logo-main">SYSTEM:</span>
+            <span class="logo-accent">AWAKENING</span>
+            <span class="logo-bracket">]</span>
+          </a>
+          <p>
+            SYSTEM: Awakening is the world's premier gamified fitness tracker inspired by the Solo Leveling 
+            lore. Transform your workouts into dungeon raids, track reps with on-device AI, and rise as a Monarch.
+          </p>
+        </div>
+
+        <div>
+          <h4 class="footer-heading">NAVIGATION</h4>
+          <ul class="footer-links-list">
+            <li><a href="index.html#hero">Daily Quest</a></li>
+            <li><a href="index.html#status-window">Status HUD Preview</a></li>
+            <li><a href="index.html#rank-calculator">Rank Evaluation</a></li>
+            <li><a href="index.html#features">Bento Features</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer-heading">LEGAL &amp; POLICIES</h4>
+          <ul class="footer-links-list">
+            <li><a href="privacy.html" style="color:var(--cyan-glow);">Security &amp; Privacy</a></li>
+            <li><a href="terms.html">Terms of Service</a></li>
+            <li><a href="https://discord.gg" target="_blank" rel="noopener">Official Discord</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer-heading">SECURITY SPECS</h4>
+          <ul class="footer-links-list">
+            <li><span style="color:#10b981;">● 100% On-Device TensorFlow</span></li>
+            <li><span style="color:#38bdf8;">● Zero Remote Frame Caching</span></li>
+            <li><span style="color:var(--text-dim);">Protocol: TLS 1.3 / AES-256</span></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom-bar">
+        <p class="footer-disclaimer">
+          <strong>DISCLAIMER:</strong> Fan tribute inspired by Solo Leveling by Chugong and DUBU (REDICE STUDIO). 
+          Not affiliated with D&amp;C Media or KakaoPage.
+        </p>
+        <p>&copy; 2026 SYSTEM: Awakening. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
